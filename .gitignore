@@ -1,5 +1,9 @@
 # Ignore Gradle project-specific cache directory
 .gradle
+.gradle-user-home
 
 # Ignore Gradle build output directory
 build
+
+# Ignore manually downloaded Gradle distributions
+gradle-*-bin.zip

@@ -10,7 +10,7 @@
 
 ---
 
-**Git Craft** is a secure in-game Git command interface for Minecraft (Paper API 1.21.4+), built for developers and server administrators. It allows players to manage Git repositories directly from the game using `/git` commands with stored encrypted credentials.
+**Git Craft** is a secure in-game Git command interface for Minecraft (Paper API 1.21.11+), built for developers and server administrators. It allows players to manage Git repositories directly from the game using `/git` commands with stored encrypted credentials.
 
 ---
 
