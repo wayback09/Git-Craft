@@ -8,9 +8,10 @@ public class App extends JavaPlugin {
     @Override
     public void onEnable() {
         saveDefaultConfig();
-        getLogger().info("Git Craft Plugin enabled.");
+        getLogger().info("Enabling Git Craft on " + getServer().getVersion() + " with Java " + System.getProperty("java.version") + ".");
         new CommandRegistrar(this).registerAll();
         setupMetrics();
+        getLogger().info("Git Craft Plugin enabled.");
     }
 
     @Override
