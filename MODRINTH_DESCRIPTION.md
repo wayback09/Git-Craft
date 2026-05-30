@@ -1,10 +1,8 @@
 # GitCraft
 
-GitCraft is a secure in-game Git command interface for Minecraft Paper servers. It lets server admins and developers manage Git repositories directly from Minecraft using `/git` commands.
+GitCraft is a Paper plugin that lets server admins and developers run Git commands directly from Minecraft using `/git`.
 
-Built and tested for Paper `1.21.11`.
-
-> GitCraft may work on other `1.21.x` versions, but those versions have not been tested.
+It is designed for managing server projects, configs, plugin folders, and other Git-backed files without leaving the game console or chat.
 
 ## Features
 
@@ -12,10 +10,11 @@ Built and tested for Paper `1.21.11`.
 - Initialize repositories
 - Add, commit, status, reset, fetch, pull, and push changes
 - Manage the `origin` remote
-- Store Git credentials using an encrypted local H2 database
-- Support GitHub personal access tokens
+- Store Git credentials securely using an encrypted H2 database
+- Supports GitHub personal access tokens
 - Permission-based command access
 - Async Git operations to help avoid server lag
+- Built for Paper `1.21.11`
 
 ## Commands
 
@@ -44,7 +43,7 @@ Built and tested for Paper `1.21.11`.
 1. Put `Git-Craft.jar` in your server's `plugins` folder.
 2. Restart the server.
 3. Run `/git help`.
-4. Initialize a repository:
+4. Initialize a repo:
 
 ```text
 /git init --path=plugins/MyProject
@@ -70,22 +69,25 @@ Built and tested for Paper `1.21.11`.
 /git push --path=plugins/MyProject
 ```
 
-## Configuration
+## GitHub Token Setup
 
-```yaml
-# WARNING: Disabling this allows users to push to public Git hosts such as GitHub or GitLab.
-disable-unsafe-warning: false
+Create a GitHub personal access token with repository access.
+
+For fine-grained tokens, use:
+
+```text
+Repository access: selected repository
+Contents: read and write
+Metadata: read-only
 ```
 
-Public Git hosting is blocked by default when adding remotes. To allow GitHub or GitLab remotes, set:
+Then log in:
 
-```yaml
-disable-unsafe-warning: true
+```text
+/git login --username=YourUsername --token=YourToken
 ```
 
 ## Permissions
-
-Commands are available to server operators by default.
 
 ```text
 gitcraft.command.help
@@ -103,6 +105,39 @@ gitcraft.command.whoami
 gitcraft.command.logout
 ```
 
-## License
+By default, commands are available to operators.
 
-No license is currently specified for this repository.
+## Configuration
+
+<details>
+<summary>config.yml</summary>
+
+```yaml
+# WARNING: Disabling this allows users to push to public Git hosts such as GitHub or GitLab.
+disable-unsafe-warning: false
+```
+
+</details>
+
+## Security Notes
+
+GitCraft stores credentials in an encrypted local H2 database inside the plugin data folder.
+
+Public Git hosting is blocked by default when adding remotes. To allow GitHub or GitLab remotes, set:
+
+<details>
+<summary>Allow public Git hosts</summary>
+
+```yaml
+disable-unsafe-warning: true
+```
+
+</details>
+
+Use this carefully. For production servers, self-hosted Git services such as Gitea or Forgejo are recommended.
+
+## Requirements
+
+- Paper server
+- Minecraft `1.21.11`
+- Java `21` or newer
