@@ -105,4 +105,4 @@ gitcraft.command.logout
 
 ## License
 
-No license is currently specified for this repository.
+All rights reserved.
