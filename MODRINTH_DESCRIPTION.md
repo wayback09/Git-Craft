@@ -14,7 +14,7 @@ It is designed for managing server projects, configs, plugin folders, and other 
 - Supports GitHub personal access tokens
 - Permission-based command access
 - Async Git operations to help avoid server lag
-- Built for Paper `1.21.11`
+- Built for Paper `26.1.2`; `26.2` support should be verified with runtime testing
 
 ## Commands
 
@@ -139,5 +139,6 @@ Use this carefully. For production servers, self-hosted Git services such as Git
 ## Requirements
 
 - Paper server
-- Minecraft `1.21.11`
-- Java `21` or newer
+- Paper `26.1.2` and `26.2` after testing
+- Java `25` or newer
+

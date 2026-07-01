@@ -3,7 +3,7 @@ main: org.yuemi.App
 authors:
   - NekoMonci12
 version: 1.0.1
-api-version: 1.21
+api-version: '26.1.2'
 commands:
   git:
     description: Git subcommand dispatcher
@@ -35,4 +35,5 @@ permissions:
     default: op
   gitcraft.command.logout:
     default: op
+
 
