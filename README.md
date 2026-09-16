@@ -103,5 +103,5 @@ gitcraft.command.logout
 
 ## License
 
-All rights reserved.
+MIT
 
