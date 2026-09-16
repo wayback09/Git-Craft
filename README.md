@@ -2,9 +2,7 @@
 
 GitCraft is a secure in-game Git command interface for Minecraft Paper servers. It lets server admins and developers manage Git repositories directly from Minecraft using `/git` commands.
 
-Built and tested for Paper `26.1.2`, with `26.2` support intended after runtime testing.
-
-> GitCraft targets Paper `26.1.2` and should be tested on Paper `26.2` before marking `26.2` as fully supported.
+> GitCraft targets Paper `26.1.2` and `26.2`.
 
 ## Features
 
